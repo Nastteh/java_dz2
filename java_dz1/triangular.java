@@ -1,5 +1,3 @@
-package triangular;
-
 import java.util.Scanner;
 
 public class triangular {
