@@ -4,49 +4,49 @@ import java.util.logging.FileHandler;
 import java.util.logging.XMLFormatter;
 
 public class calculator {
-    
+
     public static void main(String[] args) throws Exception {
         Logger logger = Logger.getLogger(calculator.class.getName());
         FileHandler fh = new FileHandler("logCalc.xml");
         logger.addHandler(fh);
         XMLFormatter xml = new XMLFormatter();
         fh.setFormatter(xml);
-        logger.info("РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ Р·Р°РїСѓС‰РµРЅ.");
+        logger.info("калькулятор запущен.");
         Scanner in = new Scanner(System.in);
-        System.out.print("Р’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ: ");
+        System.out.print("Введите первое число: ");
         int a = in.nextInt();
-        logger.info(String.format("РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІРІРµР» РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ %s", a));
-        System.out.print("Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ: ");
+        logger.info(String.format("пользователь ввел первое число %s", a));
+        System.out.print("Введите второе число: ");
         int b = in.nextInt();
-        logger.info(String.format("РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІРІРµР» РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ %s", b));
-        System.out.println("Р’РІРµРґРёС‚Рµ РѕРїРµСЂР°С†РёСЋ + - / *: ");
+        logger.info(String.format("пользователь ввел второе число %s", b));
+        System.out.println("Введите операцию + - / *: ");
         char operation;
         operation = in.next().charAt(0);
-        logger.info(String.format("РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РІРІРµР» РѕРїРµСЂР°С‚РѕСЂ %s", operation));
+        logger.info(String.format("пользователь ввел операцию %s", operation));
         int res;
         switch (operation) {
             case '+':
                 res = a + b;
-                System.out.printf("Р РµР·СѓР»СЊС‚Р°С‚: %d",res);
-                logger.info(String.format("РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРѕР»СѓС‡РёР» СЂРµР·СѓР»СЊС‚Р°С‚ '%s'", res));
+                System.out.printf("Результат: %d", res);
+                logger.info(String.format("пользователь получил результат '%s'", res));
                 break;
             case '-':
                 res = a - b;
-                System.out.printf("Р РµР·СѓР»СЊС‚Р°С‚: %d",res);
-                logger.info(String.format("РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРѕР»СѓС‡РёР» СЂРµР·СѓР»СЊС‚Р°С‚ '%s'", res));
+                System.out.printf("Результат: %d", res);
+                logger.info(String.format("пользователь получил результат '%s'", res));
                 break;
             case '/':
                 res = a / b;
-                System.out.printf("Р РµР·СѓР»СЊС‚Р°С‚: %d",res);
-                logger.info(String.format("РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРѕР»СѓС‡РёР» СЂРµР·СѓР»СЊС‚Р°С‚ '%s'", res));
+                System.out.printf("Результат: %d", res);
+                logger.info(String.format("пользователь получил результат '%s'", res));
                 break;
             case '*':
                 res = a * b;
-                System.out.printf("Р РµР·СѓР»СЊС‚Р°С‚: %d",res);
-                logger.info(String.format("РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РїРѕР»СѓС‡РёР» СЂРµР·СѓР»СЊС‚Р°С‚ '%s'", res));
+                System.out.printf("Результат: %d", res);
+                logger.info(String.format("пользователь получил результат '%s'", res));
                 break;
         }
-        logger.info("РїСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂС€РµРЅР°.");
+        logger.info("программа завершена.");
         in.close();
     }
 }
