@@ -13,20 +13,19 @@ public class bubble_sort {
         logger.addHandler(fileHandler);
         XMLFormatter xmlFormatter = new XMLFormatter();
         fileHandler.setFormatter(xmlFormatter);
-        logger.log(Level.INFO,"Приложение сортировки пузырьком запущено.");
+        logger.log(Level.INFO,"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.");
         int[] array = new int[10];
         Random rnd = new Random();
         for (int i = 0; i < array.length; i++) {
             array[i] = rnd.nextInt(100);
         }
-        logger.info(String.format("Программа сгенерировала массив целых чисел %s ", Arrays.toString(array)));
-        System.out.println("\n Исходный массив");
+        logger.info(String.format("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ %s ", Arrays.toString(array)));
+        System.out.println("\n пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         print(array);
         System.out.println("\n");
         array = bublesort(array);
-        System.out.println("Массив после сортировки пузырьком");
+        System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ");
         print(array);
-//        logger.info("Программа успешно завершена."); Если расскомментировать строку, вывод в консоль в IntelliJ IDEA может запутать.
         fileHandler.close();
     }
 
@@ -46,14 +45,13 @@ public class bubble_sort {
                     temp = arr[j];
                     arr[j] = arr[j+1];
                     arr[j+1] = temp;
-//                    Для удобного поиска выполнения условия в логе, присваиваю Level = Warning.
-                    logger.log(Level.WARNING, String.format("Иттерация i = %d, j = %d, array = %s ", i, j, Arrays.toString(arr)));
+                    logger.log(Level.WARNING, String.format("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ i = %d, j = %d, array = %s ", i, j, Arrays.toString(arr)));
                 }else {
-                    logger.log(Level.INFO, String.format("Иттерация i = %d, j = %d, array = %s ", i, j, Arrays.toString(arr)));
+                    logger.log(Level.INFO, String.format("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ i = %d, j = %d, array = %s ", i, j, Arrays.toString(arr)));
                 }
             }
         }
-        logger.info(String.format("Программа отсортировала массив целых чисел -> %s за %d иттераций.", Arrays.toString(arr), count));
+        logger.info(String.format("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ -> %s пїЅпїЅ %d пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.", Arrays.toString(arr), count));
         return arr;
     }
 
